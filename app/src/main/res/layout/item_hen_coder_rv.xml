@@ -10,14 +10,14 @@
     <RelativeLayout
         android:id="@+id/item_view"
         android:layout_width="match_parent"
-        android:layout_height="224dp">
+        android:layout_height="196dp">
 
         <ImageView
             android:id="@+id/iv_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@null"
-            android:scaleType="center"
+            android:scaleType="centerCrop"
             android:src="@mipmap/hen_coder_draw1" />
 
         <View
