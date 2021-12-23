@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name="common.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,13 @@
 
         <activity
             android:name=".draw1.Draw1Activity"
+            android:exported="false" />
+
+        <activity
+            android:name="common.ui.animation.AnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name="common.ui.animation.Spin3DActivity"
             android:exported="false" />
 
     </application>

@@ -1,4 +1,4 @@
-package com.cat.view
+package common.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.cat.view.R
 import com.cat.view.draw1.Draw1Activity
+import common.ui.animation.AnimationActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +25,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val article = Article("自定义 View 1-1 绘制基础", R.mipmap.hen_coder_draw1)
+        var article = Article("自定义 View 1-1 绘制基础", R.drawable.hen_coder_draw1)
+        list.add(article)
+        article = Article("动画 View", R.drawable.achievement_tianshil)
         list.add(article)
 
         val henCoderAdapter = HenCoderAdapter()
@@ -35,21 +39,24 @@ class MainActivity : AppCompatActivity() {
 
     private inner class HenCoderAdapter : RecyclerView.Adapter<HenCoderAdapter.ViewHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HenCoderAdapter.ViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(baseContext).inflate(R.layout.item_hen_coder_rv, null)
             return ViewHolder(view)
         }
 
         override fun getItemCount(): Int = list.size
 
-        override fun onBindViewHolder(holder: HenCoderAdapter.ViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = list[position]
             holder.text.text = item.text
             holder.background.setImageResource(item.backgroundRes)
             holder.view.setOnClickListener {
-                if (position ==0 ) {
-                     val intent = Intent(baseContext, Draw1Activity::class.java)
-                     startActivity(intent)
+                if (position == 0) {
+                    val intent = Intent(baseContext, Draw1Activity::class.java)
+                    startActivity(intent)
+                } else if (position == 1) {
+                    val intent = Intent(baseContext, AnimationActivity::class.java)
+                    startActivity(intent)
                 }
             }
         }

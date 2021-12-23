@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cat.view.animation.Spin3DLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <ImageView
+        android:id="@+id/pic_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="3"
+        android:contentDescription="@null"
+        android:scaleType="center"
+        android:src="@drawable/hen_coder_draw1" />
+
+    <TextView
+        android:id="@+id/content_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        tools:text="最近刷B站看到一个比较有意思的图片切换效果，在查看一个用户发的图片的时候是平滑过渡，如果下一张图片是另一个用户发的，则会触发一个3D翻转的效果，不止是图片翻转，连带里面的布局也会一起翻转。" />
+
+</com.cat.view.animation.Spin3DLayout>
