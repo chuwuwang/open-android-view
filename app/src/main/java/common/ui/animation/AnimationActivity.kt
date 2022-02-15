@@ -17,6 +17,7 @@ class AnimationActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.mb3dSpin.setOnClickListener { openActivity<Spin3DActivity>() }
+        binding.mbGraphicsVerify.setOnClickListener { openActivity<GraphicsVerifyActivity>() }
     }
 
 }

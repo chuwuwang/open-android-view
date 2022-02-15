@@ -30,6 +30,9 @@
         <activity
             android:name="common.ui.animation.Spin3DActivity"
             android:exported="false" />
+        <activity
+            android:name="common.ui.animation.GraphicsVerifyActivity"
+            android:exported="false" />
 
     </application>
 
