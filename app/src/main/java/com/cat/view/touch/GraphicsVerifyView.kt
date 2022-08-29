@@ -47,7 +47,7 @@ class GraphicsVerifyView @JvmOverloads constructor(
 
     init {
         setLayerType(LAYER_TYPE_SOFTWARE, null)
-        bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.achievement_tianshil)
+        bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.achievement_2)
         paint = Paint(Paint.ANTI_ALIAS_FLAG)
         // 随机初始化默认角度(值的范围为-80 ~ -280) , 匹配的时候与滑块旋转的角度相加如果在误差范围内就验证成功
         val randomValue = Random().nextInt(201) + 80f

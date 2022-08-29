@@ -7,7 +7,7 @@
     tools:ignore="HardcodedText">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_3d_spin"
+        android:id="@+id/spin_3d_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -20,13 +20,25 @@
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_graphics_verify"
+        android:id="@+id/graphics_verify_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="图形验证"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/qq_drag_effect_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="仿QQ拖拽效果"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />

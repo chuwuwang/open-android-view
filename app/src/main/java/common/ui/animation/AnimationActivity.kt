@@ -1,23 +1,19 @@
 package common.ui.animation
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.cat.view.databinding.ActivityAnimationBinding
 import com.cat.view.openActivity
+import common.ui.ViewBindingActivity
 
-class AnimationActivity : AppCompatActivity() {
+class AnimationActivity : ViewBindingActivity<ActivityAnimationBinding>() {
 
-    private val binding: ActivityAnimationBinding by lazy { ActivityAnimationBinding.inflate(layoutInflater) }
-
-    override fun onCreate(savedInstanceState: Bundle ? ) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    override fun init() {
         initView()
     }
 
     private fun initView() {
-        binding.mb3dSpin.setOnClickListener { openActivity<Spin3DActivity>() }
-        binding.mbGraphicsVerify.setOnClickListener { openActivity<GraphicsVerifyActivity>() }
+        binding.spin3dBtn.setOnClickListener { openActivity<Spin3DActivity>() }
+        binding.qqDragEffectBtn.setOnClickListener { openActivity<QQDragEffectActivity>() }
+        binding.graphicsVerifyBtn.setOnClickListener { openActivity<GraphicsVerifyActivity>() }
     }
 
 }

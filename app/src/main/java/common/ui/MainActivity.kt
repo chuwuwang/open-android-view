@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         var article = Article("自定义 View 1-1 绘制基础", R.drawable.hen_coder_draw1)
         list.add(article)
-        article = Article("动画 View", R.drawable.achievement_tianshil)
+        article = Article("动画 View", R.drawable.achievement_2)
+        list.add(article)
+        article = Article("特效 View", R.drawable.cartoon_1)
         list.add(article)
 
         val henCoderAdapter = HenCoderAdapter()
@@ -69,9 +71,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private data class Article(
-        var text: String,
-        var backgroundRes: Int
-    )
+    private data class Article(var text: String, var backgroundRes: Int)
 
 }
