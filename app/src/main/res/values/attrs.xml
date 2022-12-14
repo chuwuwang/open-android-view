@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MarqueeLayout">
+        <attr name="marquee_border_width" format="dimension" />
+        <attr name="marquee_border_radius" format="dimension" />
+        <attr name="marquee_duration" format="integer" />
+        <attr name="marquee_end_color" format="color" />
+        <attr name="marquee_start_color" format="color" />
+        <attr name="marquee_middle_color" format="color" />
+    </declare-styleable>
+
+</resources>

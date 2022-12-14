@@ -25,6 +25,9 @@
             android:exported="false" />
 
         <activity
+            android:name="common.ui.animation.MarqueeActivity"
+            android:exported="false" />
+        <activity
             android:name="common.ui.animation.AnimationActivity"
             android:exported="false" />
         <activity

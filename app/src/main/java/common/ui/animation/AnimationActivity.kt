@@ -12,6 +12,7 @@ class AnimationActivity : ViewBindingActivity<ActivityAnimationBinding>() {
 
     private fun initView() {
         binding.spin3dBtn.setOnClickListener { openActivity<Spin3DActivity>() }
+        binding.marqueeBtn.setOnClickListener { openActivity<MarqueeActivity>() }
         binding.qqDragEffectBtn.setOnClickListener { openActivity<QQDragEffectActivity>() }
         binding.graphicsVerifyBtn.setOnClickListener { openActivity<GraphicsVerifyActivity>() }
     }
