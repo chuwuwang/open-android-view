@@ -39,6 +39,9 @@
         <activity
             android:name="common.ui.animation.GraphicsVerifyActivity"
             android:exported="false" />
+        <activity
+            android:name="common.ui.animation.Spherical3DMotionActivity"
+            android:exported="false" />
 
     </application>
 
