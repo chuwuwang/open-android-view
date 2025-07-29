@@ -46,30 +46,27 @@ class DragRestoredView @JvmOverloads constructor(
         bigPointF = PointF(width / 2f, height / 2f)
     }
 
-    override fun onDraw(canvas: Canvas ? ) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (canvas != null) {
-            paint.color = Color.RED
-            // 两圆之间的距离
-            val d = distance()
-            var ratio = d / MAX_RADIUS
-            if (ratio > 0.6) {
-                ratio = 0.6f
-            }
-            // 小圆半径
-            val smallRadius = SMALL_RADIUS - SMALL_RADIUS * ratio
-            // 小圆
-            canvas.drawCircle(smallPointF.x, smallPointF.y, smallRadius, paint)
-            val contains = bigPointF.contains(smallPointF, MAX_RADIUS)
-            if (contains) {
-                // 大圆
-                canvas.drawCircle(bigPointF.x, bigPointF.y, BIG_RADIUS, paint)
-                // 绘制贝塞尔
-                drawBezier(canvas, smallRadius, BIG_RADIUS)
-            }
+        paint.color = Color.RED
+        // 两圆之间的距离
+        val d = distance()
+        var ratio = d / MAX_RADIUS
+        if (ratio > 0.6) {
+            ratio = 0.6f
+        }
+        // 小圆半径
+        val smallRadius = SMALL_RADIUS - SMALL_RADIUS * ratio
+        // 小圆
+        canvas.drawCircle(smallPointF.x, smallPointF.y, smallRadius, paint)
+        val contains = bigPointF.contains(smallPointF, MAX_RADIUS)
+        if (contains) {
+            // 大圆
+            canvas.drawCircle(bigPointF.x, bigPointF.y, BIG_RADIUS, paint)
+            // 绘制贝塞尔
+            drawBezier(canvas, smallRadius, BIG_RADIUS)
         }
     }
-
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent ? ): Boolean {

@@ -2,7 +2,13 @@ package com.cat.view.animation
 
 import android.animation.ObjectAnimator
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Outline
+import android.graphics.Paint
+import android.graphics.RectF
+import android.graphics.Shader
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
@@ -89,27 +95,25 @@ class MarqueeLayout @JvmOverloads constructor(
         animator.start()
     }
 
-    override fun dispatchDraw(canvas: Canvas ? ) {
-        if (canvas != null) {
-            val left = width / 2f
-            val top = height / 2f
-            val right = left + width
-            val bottom = top + width
-            canvas.withSave {
-                canvas.rotate(currentSpeed, width / 2f, height / 2f)
-                paint.shader = gradientStartColor
-                canvas.drawRect(left, top, right, bottom, paint)
+    override fun dispatchDraw(canvas: Canvas) {
+        val left = width / 2f
+        val top = height / 2f
+        val right = left + width
+        val bottom = top + width
+        canvas.withSave {
+            canvas.rotate(currentSpeed, width / 2f, height / 2f)
+            paint.shader = gradientStartColor
+            canvas.drawRect(left, top, right, bottom, paint)
+            paint.shader = null
+            if (endColor != -1) {
+                // 绘制渐变view2
+                paint.shader = gradientEndColor
+                canvas.drawRect(left, top, -right, -bottom, paint)
                 paint.shader = null
-                if (endColor != -1) {
-                    // 绘制渐变view2
-                    paint.shader = gradientEndColor
-                    canvas.drawRect(left, top, -right, -bottom, paint)
-                    paint.shader = null
-                }
             }
-            paint.color = middleColor
-            canvas.drawRoundRect(rectF, borderRadius, borderRadius, paint)
         }
+        paint.color = middleColor
+        canvas.drawRoundRect(rectF, borderRadius, borderRadius, paint)
         super.dispatchDraw(canvas)
     }
 

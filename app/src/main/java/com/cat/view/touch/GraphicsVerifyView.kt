@@ -2,12 +2,20 @@ package com.cat.view.touch
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.cat.view.R
-import java.util.*
+import java.util.Random
 
 class GraphicsVerifyView @JvmOverloads constructor(
     context: Context,
@@ -63,13 +71,11 @@ class GraphicsVerifyView @JvmOverloads constructor(
         initSeekBackgroundPath()
     }
 
-    override fun onDraw(canvas: Canvas ? ) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (canvas != null) {
-            drawSeekBackground(canvas)
-            drawSeek(canvas)
-            drawVerifyBitmap(canvas)
-        }
+        drawSeekBackground(canvas)
+        drawSeek(canvas)
+        drawVerifyBitmap(canvas)
     }
 
     @SuppressLint("ClickableViewAccessibility")
