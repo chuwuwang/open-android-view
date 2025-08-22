@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cat.view.R
-import com.cat.view.draw1.Draw1Activity
+import com.cat.view.ui.draw1.Draw1Activity
 import com.cat.view.openActivity
 import com.cat.view.ui.text.TextViewActivity
 import common.ui.animation.AnimationActivity
@@ -27,6 +27,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        initFeature()
+        val henCoderAdapter = HenCoderAdapter()
+        val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
+        val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.adapter = henCoderAdapter
+        recyclerView.layoutManager = staggeredGridLayoutManager
+    }
+
+    private fun initFeature() {
         var article = Article("Text View", R.drawable.ic_start_up_text)
         list.add(article)
         article = Article("动画 View", R.drawable.achievement_2)
@@ -35,12 +44,6 @@ class MainActivity : AppCompatActivity() {
         list.add(article)
         article = Article("Custom View 1-1 Drawing Basics", R.drawable.ic_start_up_draw1)
         list.add(article)
-
-        val henCoderAdapter = HenCoderAdapter()
-        val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
-        val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        recyclerView.adapter = henCoderAdapter
-        recyclerView.layoutManager = staggeredGridLayoutManager
     }
 
     private inner class HenCoderAdapter : RecyclerView.Adapter<HenCoderAdapter.ViewHolder>() {

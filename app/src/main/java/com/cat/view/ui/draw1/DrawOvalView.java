@@ -1,4 +1,4 @@
-package com.cat.view.draw1;
+package com.cat.view.ui.draw1;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,19 +9,19 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-public class DrawRectView extends View {
+public class DrawOvalView extends View {
 
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    public DrawRectView(Context context) {
+    public DrawOvalView(Context context) {
         super(context);
     }
 
-    public DrawRectView(Context context, @Nullable AttributeSet attrs) {
+    public DrawOvalView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public DrawRectView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DrawOvalView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -29,10 +29,10 @@ public class DrawRectView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // 练习内容：使用 canvas.drawRect() 方法画矩形
+        // 练习内容：使用 canvas.drawOval() 方法画椭圆
 
         paint.setColor(Color.BLACK);
-        canvas.drawRect(100, 200, 500, 400, paint);
+        canvas.drawOval(200, 200, 600, 400, paint);
     }
 
 }

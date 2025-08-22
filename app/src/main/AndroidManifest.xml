@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".draw1.Draw1Activity" />
+        <activity android:name=".ui.draw1.Draw1Activity" />
 
         <activity android:name=".ui.text.TextViewActivity" />
         <activity android:name=".ui.text.ScrollNumberViewActivity" />

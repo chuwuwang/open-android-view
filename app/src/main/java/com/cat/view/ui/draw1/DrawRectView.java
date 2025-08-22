@@ -1,26 +1,27 @@
-package com.cat.view.draw1;
+package com.cat.view.ui.draw1;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
-public class PieChartView extends View {
+public class DrawRectView extends View {
 
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    public PieChartView(Context context) {
+    public DrawRectView(Context context) {
         super(context);
     }
 
-    public PieChartView(Context context, @Nullable AttributeSet attrs) {
+    public DrawRectView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public PieChartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DrawRectView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -28,8 +29,10 @@ public class PieChartView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // 综合练习
-        // 练习内容：使用各种 Canvas.drawXXX() 方法画饼图
+        // 练习内容：使用 canvas.drawRect() 方法画矩形
+
+        paint.setColor(Color.BLACK);
+        canvas.drawRect(100, 200, 500, 400, paint);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.cat.view.draw1
+package com.cat.view.ui.draw1
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
