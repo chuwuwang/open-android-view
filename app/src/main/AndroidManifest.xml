@@ -23,6 +23,9 @@
             android:name=".draw1.Draw1Activity"
             android:exported="false" />
 
+        <activity android:name=".ui.text.TextViewActivity" />
+        <activity android:name=".ui.text.ScrollNumberViewActivity" />
+
         <activity
             android:name="common.ui.animation.MarqueeActivity"
             android:exported="false" />
