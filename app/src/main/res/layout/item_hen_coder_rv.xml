@@ -29,7 +29,7 @@
                     android:layout_height="match_parent"
                     android:contentDescription="@null"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/hen_coder_draw1" />
+                    android:src="@drawable/ic_start_up_draw1" />
 
                 <View
                     android:layout_width="match_parent"

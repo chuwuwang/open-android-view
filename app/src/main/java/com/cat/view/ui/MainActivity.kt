@@ -1,4 +1,4 @@
-package common.ui
+package com.cat.view.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cat.view.R
 import com.cat.view.draw1.Draw1Activity
+import com.cat.view.openActivity
 import com.cat.view.ui.text.TextViewActivity
 import common.ui.animation.AnimationActivity
 
@@ -26,13 +27,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        var article = Article("Text View", R.drawable.ic_start_up_view)
+        var article = Article("Text View", R.drawable.ic_start_up_text)
         list.add(article)
         article = Article("动画 View", R.drawable.achievement_2)
         list.add(article)
         article = Article("特效 View", R.drawable.cartoon_1)
         list.add(article)
-        article = Article("自定义 View 1-1 绘制基础", R.drawable.hen_coder_draw1)
+        article = Article("Custom View 1-1 Drawing Basics", R.drawable.ic_start_up_draw1)
         list.add(article)
 
         val henCoderAdapter = HenCoderAdapter()
@@ -56,16 +57,18 @@ class MainActivity : AppCompatActivity() {
             holder.text.text = item.text
             holder.background.setImageResource(item.backgroundRes)
             holder.view.setOnClickListener {
-                if (item.text == "Text View") {
-                    val intent = Intent(baseContext, TextViewActivity::class.java)
-                    startActivity(intent)
-                } else if (position == 0) {
-                    val intent = Intent(baseContext, Draw1Activity::class.java)
-                    startActivity(intent)
-                } else if (position == 1) {
-                    val intent = Intent(baseContext, AnimationActivity::class.java)
-                    startActivity(intent)
-                }
+                gotoFeature(item, position)
+            }
+        }
+
+        private fun gotoFeature(item: Article, position: Int) {
+            if (item.text == "Text View") {
+                openActivity<TextViewActivity>()
+            } else if (item.text == "Custom View 1-1 Drawing Basics") {
+                openActivity<Draw1Activity>()
+            } else if (position == 1) {
+                val intent = Intent(baseContext, AnimationActivity::class.java)
+                startActivity(intent)
             }
         }
 

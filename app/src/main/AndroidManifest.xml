@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="common.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".draw1.Draw1Activity"
-            android:exported="false" />
+        <activity android:name=".draw1.Draw1Activity" />
 
         <activity android:name=".ui.text.TextViewActivity" />
         <activity android:name=".ui.text.ScrollNumberViewActivity" />

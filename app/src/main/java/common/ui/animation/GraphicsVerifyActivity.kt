@@ -1,7 +1,7 @@
 package common.ui.animation
 
 import com.cat.view.databinding.ActivityTouchGraphicsVerifyBinding
-import common.ui.ViewBindingActivity
+import com.cat.view.ui.ViewBindingActivity
 
 class GraphicsVerifyActivity : ViewBindingActivity<ActivityTouchGraphicsVerifyBinding>() {
 

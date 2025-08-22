@@ -1,7 +1,7 @@
 package common.ui.animation
 
 import com.cat.view.databinding.ActivityTouchQqDragEffectBinding
-import common.ui.ViewBindingActivity
+import com.cat.view.ui.ViewBindingActivity
 
 class QQDragEffectActivity : ViewBindingActivity<ActivityTouchQqDragEffectBinding>() {
 

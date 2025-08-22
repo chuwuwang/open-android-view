@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cat.view.R
 import com.cat.view.animation.Spin3DLayout
 import com.cat.view.databinding.ActivityAnimation3dSpinBinding
-import common.ui.ViewBindingActivity
+import com.cat.view.ui.ViewBindingActivity
 
 class Spin3DActivity : ViewBindingActivity<ActivityAnimation3dSpinBinding>() {
 

@@ -1,7 +1,7 @@
 package com.cat.view.ui.text
 
 import com.cat.view.databinding.ActivityTextScrollNumberViewBinding
-import common.ui.ViewBindingActivity
+import com.cat.view.ui.ViewBindingActivity
 
 class ScrollNumberViewActivity : ViewBindingActivity<ActivityTextScrollNumberViewBinding>() {
 

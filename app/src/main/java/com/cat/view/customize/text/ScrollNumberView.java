@@ -144,6 +144,7 @@ public class ScrollNumberView extends View {
         }
 
         // new number
+        offsetX = 0f;
         alpha = mFraction;
         offset = mPaint.getFontSpacing() * (1 - mFraction);
         if (mScrolling) {
