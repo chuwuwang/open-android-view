@@ -68,13 +68,13 @@ class MainActivity : AppCompatActivity() {
         private fun gotoFeature(item: Article, position: Int) {
             if (item.text == "Text View") {
                 openActivity<TextActivity>()
-            } else if (item.text == "Custom View 1-1 Drawing Basics") {
-                openActivity<Draw1Activity>()
             } else if (item.text == "Container Layout") {
                 openActivity<ContainerActivity>()
             } else if (position == 1) {
                 val intent = Intent(baseContext, AnimationActivity::class.java)
                 startActivity(intent)
+            } else if (item.text == "Custom View 1-1 Drawing Basics") {
+                openActivity<Draw1Activity>()
             }
         }
 

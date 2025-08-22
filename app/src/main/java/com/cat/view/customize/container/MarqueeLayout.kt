@@ -20,8 +20,8 @@ import com.cat.view.touch.dp
 
 class MarqueeLayout @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    attrs: AttributeSet ? = null,
+    defStyleAttr: Int = 0,
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     private var endColor = 0
@@ -44,12 +44,12 @@ class MarqueeLayout @JvmOverloads constructor(
         clipToOutline = true
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.MarqueeLayout)
         try {
-            endColor = attributes.getColor(R.styleable.MarqueeLayout_marquee_end_color, Color.BLUE)
-            startColor = attributes.getColor(R.styleable.MarqueeLayout_marquee_start_color, Color.BLUE)
-            middleColor = attributes.getColor(R.styleable.MarqueeLayout_marquee_middle_color, Color.WHITE)
+            endColor = attributes.getColor(R.styleable.MarqueeLayout_marquee_endColor, Color.BLUE)
+            startColor = attributes.getColor(R.styleable.MarqueeLayout_marquee_startColor, Color.BLUE)
+            middleColor = attributes.getColor(R.styleable.MarqueeLayout_marquee_middleColor, Color.WHITE)
             duration = attributes.getInt(R.styleable.MarqueeLayout_marquee_duration, 3000)
-            borderWidth = attributes.getDimension(R.styleable.MarqueeLayout_marquee_border_width, 4.dp)
-            borderRadius = attributes.getDimension(R.styleable.MarqueeLayout_marquee_border_radius, 8.dp)
+            borderWidth = attributes.getDimension(R.styleable.MarqueeLayout_marquee_borderWidth, 4.dp)
+            borderRadius = attributes.getDimension(R.styleable.MarqueeLayout_marquee_borderRadius, 8.dp)
         } finally {
             attributes.recycle()
         }
@@ -59,6 +59,7 @@ class MarqueeLayout @JvmOverloads constructor(
     }
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
     private val rectF by lazy {
         val left = 0f + borderWidth / 2f
         val top = 0f + borderWidth / 2f
@@ -68,27 +69,11 @@ class MarqueeLayout @JvmOverloads constructor(
     }
 
     private val gradientStartColor by lazy {
-        LinearGradient(
-            width * 1f,
-            height / 2f,
-            width * 1f,
-            height * 1f,
-            intArrayOf(Color.TRANSPARENT, startColor),
-            floatArrayOf(0f, 0.9f),
-            Shader.TileMode.CLAMP
-        )
+        LinearGradient(width * 1f, height / 2f, width * 1f, height * 1f, intArrayOf(Color.TRANSPARENT, startColor), floatArrayOf(0f, 0.9f), Shader.TileMode.CLAMP)
     }
 
     private val gradientEndColor by lazy {
-        LinearGradient(
-            width / 2f,
-            height / 2f,
-            width / 2f,
-            0f,
-            intArrayOf(Color.TRANSPARENT, endColor),
-            floatArrayOf(0f, 0.9f),
-            Shader.TileMode.CLAMP
-        )
+        LinearGradient(width / 2f, height / 2f, width / 2f, 0f, intArrayOf(Color.TRANSPARENT, endColor), floatArrayOf(0f, 0.9f), Shader.TileMode.CLAMP)
     }
 
     private val animator by lazy {

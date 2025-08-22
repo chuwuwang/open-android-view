@@ -2,12 +2,12 @@
 <resources>
 
     <declare-styleable name="MarqueeLayout">
-        <attr name="marquee_border_width" format="dimension|reference" />
-        <attr name="marquee_border_radius" format="dimension|reference" />
+        <attr name="marquee_borderWidth" format="dimension|reference" />
+        <attr name="marquee_borderRadius" format="dimension|reference" />
         <attr name="marquee_duration" format="integer" />
-        <attr name="marquee_end_color" format="color|reference" />
-        <attr name="marquee_start_color" format="color|reference" />
-        <attr name="marquee_middle_color" format="color|reference" />
+        <attr name="marquee_endColor" format="color|reference" />
+        <attr name="marquee_startColor" format="color|reference" />
+        <attr name="marquee_middleColor" format="color|reference" />
     </declare-styleable>
 
     <declare-styleable name="ScrollNumberView">
