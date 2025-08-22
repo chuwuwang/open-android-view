@@ -11,9 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cat.view.R
-import com.cat.view.ui.draw1.Draw1Activity
 import com.cat.view.openActivity
-import com.cat.view.ui.text.TextViewActivity
+import com.cat.view.ui.container.ContainerActivity
+import com.cat.view.ui.draw1.Draw1Activity
+import com.cat.view.ui.text.TextActivity
 import common.ui.animation.AnimationActivity
 
 class MainActivity : AppCompatActivity() {
@@ -38,9 +39,9 @@ class MainActivity : AppCompatActivity() {
     private fun initFeature() {
         var article = Article("Text View", R.drawable.ic_start_up_text)
         list.add(article)
-        article = Article("动画 View", R.drawable.achievement_2)
+        article = Article("Container Layout", R.drawable.ic_start_up_container)
         list.add(article)
-        article = Article("特效 View", R.drawable.cartoon_1)
+        article = Article("动画 View", R.drawable.achievement_2)
         list.add(article)
         article = Article("Custom View 1-1 Drawing Basics", R.drawable.ic_start_up_draw1)
         list.add(article)
@@ -66,9 +67,11 @@ class MainActivity : AppCompatActivity() {
 
         private fun gotoFeature(item: Article, position: Int) {
             if (item.text == "Text View") {
-                openActivity<TextViewActivity>()
+                openActivity<TextActivity>()
             } else if (item.text == "Custom View 1-1 Drawing Basics") {
                 openActivity<Draw1Activity>()
+            } else if (item.text == "Container Layout") {
+                openActivity<ContainerActivity>()
             } else if (position == 1) {
                 val intent = Intent(baseContext, AnimationActivity::class.java)
                 startActivity(intent)

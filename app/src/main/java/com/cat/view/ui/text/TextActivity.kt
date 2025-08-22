@@ -4,7 +4,7 @@ import com.cat.view.databinding.ActivityTextMainBinding
 import com.cat.view.openActivity
 import com.cat.view.ui.ViewBindingActivity
 
-class TextViewActivity : ViewBindingActivity<ActivityTextMainBinding>() {
+class TextActivity : ViewBindingActivity<ActivityTextMainBinding>() {
 
     override fun init() {
         initView()

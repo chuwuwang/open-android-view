@@ -21,12 +21,12 @@
 
         <activity android:name=".ui.draw1.Draw1Activity" />
 
-        <activity android:name=".ui.text.TextViewActivity" />
+        <activity android:name=".ui.text.TextActivity" />
         <activity android:name=".ui.text.ScrollNumberViewActivity" />
 
-        <activity
-            android:name="common.ui.animation.MarqueeActivity"
-            android:exported="false" />
+        <activity android:name=".ui.container.ContainerActivity" />
+        <activity android:name=".ui.container.MarqueeLayoutActivity" />
+
         <activity
             android:name="common.ui.animation.AnimationActivity"
             android:exported="false" />

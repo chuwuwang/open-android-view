@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.cat.view.animation.MarqueeLayout
+    <com.cat.view.customize.container.MarqueeLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="#cccccc"
+        android:background="#CCCCCC"
         android:orientation="vertical"
         app:marquee_end_color="@color/colorPrimary"
         app:marquee_start_color="@color/colorAccent">
@@ -20,6 +20,6 @@
             android:layout_height="wrap_content"
             android:text="Hello" />
 
-    </com.cat.view.animation.MarqueeLayout>
+    </com.cat.view.customize.container.MarqueeLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

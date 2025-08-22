@@ -1,4 +1,4 @@
-package com.cat.view.animation
+package com.cat.view.customize.container
 
 import android.animation.ObjectAnimator
 import android.content.Context
@@ -20,7 +20,7 @@ import com.cat.view.touch.dp
 
 class MarqueeLayout @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet ? = null,
+    attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
@@ -68,11 +68,27 @@ class MarqueeLayout @JvmOverloads constructor(
     }
 
     private val gradientStartColor by lazy {
-        LinearGradient(width * 1f, height / 2f, width * 1f, height * 1f, intArrayOf(Color.TRANSPARENT, startColor), floatArrayOf(0f, 0.9f), Shader.TileMode.CLAMP)
+        LinearGradient(
+            width * 1f,
+            height / 2f,
+            width * 1f,
+            height * 1f,
+            intArrayOf(Color.TRANSPARENT, startColor),
+            floatArrayOf(0f, 0.9f),
+            Shader.TileMode.CLAMP
+        )
     }
 
     private val gradientEndColor by lazy {
-        LinearGradient(width / 2f, height / 2f, width / 2f, 0f, intArrayOf(Color.TRANSPARENT, endColor), floatArrayOf(0f, 0.9f), Shader.TileMode.CLAMP)
+        LinearGradient(
+            width / 2f,
+            height / 2f,
+            width / 2f,
+            0f,
+            intArrayOf(Color.TRANSPARENT, endColor),
+            floatArrayOf(0f, 0.9f),
+            Shader.TileMode.CLAMP
+        )
     }
 
     private val animator by lazy {
