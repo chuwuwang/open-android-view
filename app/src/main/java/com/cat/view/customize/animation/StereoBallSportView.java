@@ -1,4 +1,4 @@
-package com.cat.view.animation;
+package com.cat.view.customize.animation;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,31 +17,31 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 3D球面运动
+ * 立体运动小球
  */
-public class Smartian3DView extends View {
+public class StereoBallSportView extends View {
 
-    private DisplayMetrics mDM;
-    private TextPaint mCommonPaint;
+    private TextPaint commonPaint;
+    private DisplayMetrics displayMetrics;
 
-    public Smartian3DView(Context context) {
+    public StereoBallSportView(Context context) {
         this(context, null);
     }
 
-    public Smartian3DView(Context context, AttributeSet attrs) {
+    public StereoBallSportView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initPaint();
     }
 
     private void initPaint() {
-        mDM = getResources().getDisplayMetrics();
+        displayMetrics = getResources().getDisplayMetrics();
         // 否则提供给外部纹理绘制
-        mCommonPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
-        mCommonPaint.setAntiAlias(true);
-        mCommonPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        mCommonPaint.setStrokeCap(Paint.Cap.ROUND);
-        mCommonPaint.setFilterBitmap(true);
-        mCommonPaint.setDither(true);
+        commonPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
+        commonPaint.setAntiAlias(true);
+        commonPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        commonPaint.setStrokeCap(Paint.Cap.ROUND);
+        commonPaint.setFilterBitmap(true);
+        commonPaint.setDither(true);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Smartian3DView extends View {
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         if (widthMode != MeasureSpec.EXACTLY) {
-            widthSize = mDM.widthPixels / 2;
+            widthSize = displayMetrics.widthPixels / 2;
         }
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
@@ -57,7 +57,6 @@ public class Smartian3DView extends View {
         if (heightMode != MeasureSpec.EXACTLY) {
             heightSize = widthSize / 2;
         }
-
         setMeasuredDimension(widthSize, heightSize);
     }
 
@@ -125,21 +124,21 @@ public class Smartian3DView extends View {
             float y = point.y;
             float z = point.z;
 
-            // 绕X轴旋转，乘以X轴的旋转矩阵
+            // 绕X轴旋转, 乘以X轴的旋转矩阵
             double ry1_1 = y * Math.cos(xr) + z * -Math.sin(xr);
             double rz1_1 = y * Math.sin(xr) + z * Math.cos(xr);
             float rx1 = x;
             float ry1 = (float) ry1_1;
             float rz1 = (float) rz1_1;
 
-            // 绕Y轴旋转,乘以Y轴的旋转矩阵
+            // 绕Y轴旋转, 乘以Y轴的旋转矩阵
             double rx2_2 = rx1 * Math.cos(yr) + rz1 * Math.sin(yr);
             double rz2_2 = rx1 * -Math.sin(yr) + rz1 * Math.cos(yr);
             float rx2 = (float) rx2_2;
             float ry2 = ry1;
             float rz2 = (float) rz2_2;
 
-            // 绕Z轴旋转,乘以Z轴的旋转矩阵
+            // 绕Z轴旋转, 乘以Z轴的旋转矩阵
             double rx3_3 = rx2 * Math.cos(zr) + ry2 * -Math.sin(zr);
             double ry3_3 = rx2 * Math.sin(zr) + ry2 * Math.cos(zr);
             float rx3 = (float) rx3_3;
@@ -150,51 +149,51 @@ public class Smartian3DView extends View {
             point.y = ry3;
             point.z = rz3;
 
-            // 透视除法，z轴向内的方向
+            // 透视除法, z轴向内的方向
             float scale = (2 * radius) / (2 * radius + rz3);
             point.scale = scale;
 
         }
 
-        // 排序，先画背面的，再画正面的
+        // 排序, 先画背面的, 再画正面的
         Collections.sort(pointList, comparator);
 
         for (int i = 0; i < pointList.size(); i++) {
             Point point = pointList.get(i);
-            mCommonPaint.setColor(point.color);
+            commonPaint.setColor(point.color);
             if (point.scale > 1) {
-                mCommonPaint.setAlpha(255);
+                commonPaint.setAlpha(255);
             } else {
                 int alpha = (int) (point.scale * 255);
-                mCommonPaint.setAlpha(alpha);
+                commonPaint.setAlpha(alpha);
             }
             if (point.z > 0) {
-                canvas.drawCircle(point.x * point.scale, point.y * point.scale, 5 + 25 * point.scale, mCommonPaint);
+                canvas.drawCircle(point.x * point.scale, point.y * point.scale, 5 + 25 * point.scale, commonPaint);
                 continue;
             }
             break;
         }
-        mCommonPaint.setAlpha(255);
+        commonPaint.setAlpha(255);
         if (shader == null) {
             shader = new RadialGradient(0, 0, radius, new int[] { 0xffec7733, 0x77f9922, 0x11000000 }, new float[] { 0.2f, 0.7f, 0.9f }, Shader.TileMode.CLAMP);
         }
-        mCommonPaint.setShader(shader);
-        mCommonPaint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(0, 0, radius, mCommonPaint);
-        mCommonPaint.setShader(null);
+        commonPaint.setShader(shader);
+        commonPaint.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(0, 0, radius, commonPaint);
+        commonPaint.setShader(null);
 
         // 绘制大于
         for (int i = pointList.size() - 1; i >= 0; i--) {
             Point point = pointList.get(i);
-            mCommonPaint.setColor(point.color);
+            commonPaint.setColor(point.color);
             if (point.scale > 1) {
-                mCommonPaint.setAlpha(255);
+                commonPaint.setAlpha(255);
             } else {
                 int alpha = (int) (point.scale * 255);
-                mCommonPaint.setAlpha(alpha);
+                commonPaint.setAlpha(alpha);
             }
             if (point.z <= 0) {
-                canvas.drawCircle(point.x * point.scale, point.y * point.scale, 5 + 25 * point.scale, mCommonPaint);
+                canvas.drawCircle(point.x * point.scale, point.y * point.scale, 5 + 25 * point.scale, commonPaint);
             } else {
                 break;
             }

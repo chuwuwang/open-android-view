@@ -14,7 +14,7 @@ import com.cat.view.openActivity
 import com.cat.view.ui.container.ContainerActivity
 import com.cat.view.ui.draw1.Draw1Activity
 import com.cat.view.ui.text.TextActivity
-import common.ui.animation.AnimationActivity
+import com.cat.view.ui.animation.AnimationActivity
 
 class MainActivity : AppCompatActivity() {
 

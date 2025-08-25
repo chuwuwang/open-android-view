@@ -28,9 +28,8 @@
         <activity android:name=".ui.container.MarqueeLayoutActivity" />
         <activity android:name=".ui.container.FlipStereoLayoutActivity" />
 
-        <activity
-            android:name="common.ui.animation.AnimationActivity"
-            android:exported="false" />
+        <activity android:name=".ui.animation.AnimationActivity" />
+        <activity android:name=".ui.animation.StereoBallSportViewActivity" />
 
         <activity
             android:name="common.ui.animation.QQDragEffectActivity"
@@ -38,9 +37,7 @@
         <activity
             android:name="common.ui.animation.GraphicsVerifyActivity"
             android:exported="false" />
-        <activity
-            android:name="common.ui.animation.Spherical3DMotionActivity"
-            android:exported="false" />
+
 
     </application>
 
