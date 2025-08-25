@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cat.view.R
 import com.cat.view.openActivity
+import com.cat.view.ui.animation.AnimationActivity
 import com.cat.view.ui.container.ContainerActivity
 import com.cat.view.ui.draw1.Draw1Activity
+import com.cat.view.ui.image.ImageActivity
 import com.cat.view.ui.text.TextActivity
-import com.cat.view.ui.animation.AnimationActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,9 +39,11 @@ class MainActivity : AppCompatActivity() {
     private fun initFeature() {
         var article = Article("Text View", R.drawable.ic_start_up_text)
         list.add(article)
+        article = Article("Image View", R.drawable.ic_start_up_image)
+        list.add(article)
         article = Article("Container Layout", R.drawable.ic_start_up_container)
         list.add(article)
-        article = Article("Special Animation", R.drawable.achievement_2)
+        article = Article("Special Animation", R.drawable.ic_start_up_animation)
         list.add(article)
         article = Article("Custom View 1-1 Drawing Basics", R.drawable.ic_start_up_draw1)
         list.add(article)
@@ -71,6 +74,8 @@ class MainActivity : AppCompatActivity() {
                 openActivity<AnimationActivity>()
             } else if (item.text == "Custom View 1-1 Drawing Basics") {
                 openActivity<Draw1Activity>()
+            } else if (item.text == "Image View") {
+                openActivity<ImageActivity>()
             }
         }
 

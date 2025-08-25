@@ -1,6 +1,5 @@
-package com.cat.view.touch
+package com.cat.view.customize.image
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -42,7 +41,7 @@ class GraphicsVerifyView @JvmOverloads constructor(
     private var paint: Paint
     private var bitmap: Bitmap
     private var isTouch = false
-    private var threshold = 5f // 阈值
+    private var threshold = 10f // 阈值
     private var status = STATUS_DEFAULT
     private var defaultDegrees = 0f
     private var currentDegrees = 0f // 当前图片角度
@@ -55,7 +54,7 @@ class GraphicsVerifyView @JvmOverloads constructor(
 
     init {
         setLayerType(LAYER_TYPE_SOFTWARE, null)
-        bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.achievement_2)
+        bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.ic_achievement_2)
         paint = Paint(Paint.ANTI_ALIAS_FLAG)
         // 随机初始化默认角度(值的范围为-80 ~ -280) , 匹配的时候与滑块旋转的角度相加如果在误差范围内就验证成功
         val randomValue = Random().nextInt(201) + 80f
@@ -78,42 +77,38 @@ class GraphicsVerifyView @JvmOverloads constructor(
         drawVerifyBitmap(canvas)
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent ? ): Boolean {
-        if (event == null) {
-            return super.onTouchEvent(event)
-        } else {
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    if (status == STATUS_DEFAULT) {
-                        // 判断触摸点是否在滑块上
-                        val rect = RectF(seekMoveX, seekMarginTop + bitmap.height, seekRadius * 2, seekMarginTop + bitmap.height + seekRadius * 2)
-                        val contains = rect.contains(event.x, event.y)
-                        if (contains) {
-                            isTouch = true
-                            invalidate()
-                        }
-                    }
-                }
-                MotionEvent.ACTION_MOVE -> {
-                    if (isTouch) {
-                        seekMoveX = event.x
+        if (event == null) return super.onTouchEvent(event)
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                if (status == STATUS_DEFAULT) {
+                    // 判断触摸点是否在滑块上
+                    val rect = RectF(seekMoveX, seekMarginTop + bitmap.height, seekRadius * 2, seekMarginTop + bitmap.height + seekRadius * 2)
+                    val contains = rect.contains(event.x, event.y)
+                    if (contains) {
+                        isTouch = true
                         invalidate()
                     }
                 }
-                MotionEvent.ACTION_UP -> {
-                    status = if (currentDegrees <= threshold && currentDegrees >= -threshold) {
-                        STATUS_SUCCESS
-                    } else {
-                        STATUS_FAILURE
-                    }
-                    isTouch = false
+            }
+            MotionEvent.ACTION_MOVE -> {
+                if (isTouch) {
+                    seekMoveX = event.x
                     invalidate()
                 }
-                else -> {}
             }
-            return isTouch
+            MotionEvent.ACTION_UP -> {
+                status = if (currentDegrees <= threshold && currentDegrees >= -threshold) {
+                    STATUS_SUCCESS
+                } else {
+                    STATUS_FAILURE
+                }
+                isTouch = false
+                invalidate()
+            }
+            else -> {}
         }
+        return isTouch
     }
 
     private fun initSeekBackgroundPath() {

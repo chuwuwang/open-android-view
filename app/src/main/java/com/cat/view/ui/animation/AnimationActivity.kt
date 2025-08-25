@@ -3,7 +3,7 @@ package com.cat.view.ui.animation
 import com.cat.view.databinding.ActivityAnimationMainBinding
 import com.cat.view.openActivity
 import com.cat.view.ui.ViewBindingActivity
-import common.ui.animation.GraphicsVerifyActivity
+import com.cat.view.ui.image.GraphicsVerifyViewActivity
 import common.ui.animation.QQDragEffectActivity
 
 class AnimationActivity : ViewBindingActivity<ActivityAnimationMainBinding>() {
@@ -15,7 +15,7 @@ class AnimationActivity : ViewBindingActivity<ActivityAnimationMainBinding>() {
     private fun initView() {
         binding.qqDragEffectBtn.setOnClickListener { openActivity<QQDragEffectActivity>() }
         binding.btnStereoBallSport.setOnClickListener { openActivity<StereoBallSportViewActivity>() }
-        binding.graphicsVerifyBtn.setOnClickListener { openActivity<GraphicsVerifyActivity>() }
+        binding.graphicsVerifyBtn.setOnClickListener { openActivity<GraphicsVerifyViewActivity>() }
     }
 
 }
