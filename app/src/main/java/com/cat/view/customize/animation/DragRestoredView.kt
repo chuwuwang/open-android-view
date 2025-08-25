@@ -1,20 +1,29 @@
-package com.cat.view.touch
+package com.cat.view.customize.animation
 
 import android.animation.ObjectAnimator
 import android.animation.PointFEvaluator
 import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.PointF
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import androidx.core.graphics.minus
-import kotlin.math.*
+import com.cat.view.util.dp
+import kotlin.math.atan
+import kotlin.math.cos
+import kotlin.math.pow
+import kotlin.math.sin
+import kotlin.math.sqrt
 
+/**
+ * 可拖拽回弹View, 仿QQ拖拽效果
+ */
 class DragRestoredView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet ? = null,
@@ -68,39 +77,35 @@ class DragRestoredView @JvmOverloads constructor(
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent ? ): Boolean {
-        if (event != null) {
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    val f = PointF(event.x, event.y)
-                    move = bigPointF.contains(f, BIG_RADIUS)
-                }
-                MotionEvent.ACTION_MOVE -> {
-                    if (move) { // 如果当前点击的位置包含bigPointF,说明选中了
-                        bigPointF.x = event.x
-                        bigPointF.y = event.y
-                    } else {
-                        bigPointF.x = width / 2f
-                        bigPointF.y = height / 2f
-                    }
-                }
-                MotionEvent.ACTION_UP -> { // 如果大圆位置超出拖拽范围,不回弹
-                    val contains = bigPointF.contains(smallPointF, MAX_RADIUS)
-                    if (contains) {
-                        bigAnimator().start()
-                    } else {
-                        // 将View移动到原始位置
-                        bigPointF.x = width / 2f
-                        bigPointF.y = height / 2f
-                    }
+        if (event == null) return super.onTouchEvent(event)
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                val f = PointF(event.x, event.y)
+                move = bigPointF.contains(f, BIG_RADIUS)
+            }
+            MotionEvent.ACTION_MOVE -> {
+                if (move) { // 如果当前点击的位置包含bigPointF, 说明选中了
+                    bigPointF.x = event.x
+                    bigPointF.y = event.y
+                } else {
+                    bigPointF.x = width / 2f
+                    bigPointF.y = height / 2f
                 }
             }
-
-            invalidate()
-            return true
+            MotionEvent.ACTION_UP -> { // 如果大圆位置超出拖拽范围, 不回弹
+                val contains = bigPointF.contains(smallPointF, MAX_RADIUS)
+                if (contains) {
+                    bigAnimator().start()
+                } else {
+                    // 将View移动到原始位置
+                    bigPointF.x = width / 2f
+                    bigPointF.y = height / 2f
+                }
+            }
         }
-        return super.onTouchEvent(event)
+        invalidate()
+        return true
     }
 
     private fun bigAnimator(): ValueAnimator {
@@ -172,12 +177,11 @@ class DragRestoredView @JvmOverloads constructor(
     }
 
     companion object {
-        private val MAX_RADIUS = 150.dp         // 最大范围(半径), 超出这个范围大圆不显示
+
         private val BIG_RADIUS = 20.dp          // 大圆半径
+        private val MAX_RADIUS = 150.dp         // 最大范围(半径), 超出这个范围大圆不显示
         private val SMALL_RADIUS = BIG_RADIUS   // 小圆半径
+
     }
 
 }
-
-val Int.dp
-    get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), Resources.getSystem().displayMetrics)

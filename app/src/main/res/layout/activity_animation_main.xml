@@ -5,29 +5,17 @@
     android:orientation="vertical">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/graphics_verify_btn"
+        android:id="@+id/btn_drag_restored"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="图形验证"
+        android:text="Drag Restored (仿QQ拖拽效果)"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/qq_drag_effect_btn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="仿QQ拖拽效果"
-        android:textAppearance="?android:attr/textAppearance"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_stereo_ball_sport"

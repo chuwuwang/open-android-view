@@ -10,12 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cat.view.R
-import com.cat.view.openActivity
 import com.cat.view.ui.animation.AnimationActivity
 import com.cat.view.ui.container.ContainerActivity
 import com.cat.view.ui.draw1.Draw1Activity
 import com.cat.view.ui.image.ImageActivity
 import com.cat.view.ui.text.TextActivity
+import com.cat.view.util.openActivity
 
 class MainActivity : AppCompatActivity() {
 

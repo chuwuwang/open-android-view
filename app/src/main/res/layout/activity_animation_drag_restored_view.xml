@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.cat.view.touch.DragRestoredView
+    <com.cat.view.customize.animation.DragRestoredView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

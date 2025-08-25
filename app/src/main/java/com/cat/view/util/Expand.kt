@@ -1,4 +1,4 @@
-package com.cat.view
+package com.cat.view.util
 
 import android.app.Activity
 import android.content.Intent

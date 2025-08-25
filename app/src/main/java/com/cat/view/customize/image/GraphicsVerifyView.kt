@@ -11,6 +11,7 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffXfermode
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import com.cat.view.R
@@ -47,9 +48,13 @@ class GraphicsVerifyView @JvmOverloads constructor(
     private var currentDegrees = 0f // 当前图片角度
 
     companion object {
+
+        private const val TAG = "GraphicsVerifyView"
+
         private const val STATUS_DEFAULT = 0
         private const val STATUS_FAILURE = 1
         private const val STATUS_SUCCESS = 2
+
     }
 
     init {
@@ -103,6 +108,7 @@ class GraphicsVerifyView @JvmOverloads constructor(
                 } else {
                     STATUS_FAILURE
                 }
+                Log.e(TAG, "verify status: $status")
                 isTouch = false
                 invalidate()
             }

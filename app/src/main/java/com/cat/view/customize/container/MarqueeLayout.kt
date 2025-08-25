@@ -16,7 +16,7 @@ import android.widget.LinearLayout
 import androidx.core.graphics.withSave
 import androidx.core.view.setPadding
 import com.cat.view.R
-import com.cat.view.touch.dp
+import com.cat.view.util.dp
 
 class MarqueeLayout @JvmOverloads constructor(
     context: Context,
