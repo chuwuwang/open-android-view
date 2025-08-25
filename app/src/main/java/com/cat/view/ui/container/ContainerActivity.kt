@@ -12,6 +12,7 @@ class ContainerActivity : ViewBindingActivity<ActivityContainerMainBinding>() {
 
     private fun initView() {
         binding.btnMarqueeLight.setOnClickListener { openActivity<MarqueeLayoutActivity>() }
+        binding.btnFlipStereo.setOnClickListener { openActivity<FlipStereoLayoutActivity>() }
     }
 
 }

@@ -1,6 +1,5 @@
-package common.ui.animation
+package com.cat.view.ui.container
 
-import android.annotation.SuppressLint
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -8,11 +7,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cat.view.R
-import com.cat.view.animation.Spin3DLayout
-import com.cat.view.databinding.ActivityAnimation3dSpinBinding
+import com.cat.view.customize.container.FlipStereoLayout
+import com.cat.view.databinding.ActivityContainerFlipStereoLayoutBinding
 import com.cat.view.ui.ViewBindingActivity
 
-class Spin3DActivity : ViewBindingActivity<ActivityAnimation3dSpinBinding>() {
+class FlipStereoLayoutActivity : ViewBindingActivity<ActivityContainerFlipStereoLayoutBinding>() {
 
     override fun init() {
         initView()
@@ -21,21 +20,20 @@ class Spin3DActivity : ViewBindingActivity<ActivityAnimation3dSpinBinding>() {
     private fun initView() {
         val pagerAdapter = PagerAdapter()
         binding.viewPager2.adapter = pagerAdapter
-        val transformer = Spin3DLayout.Spin3DTransformer()
+        val transformer = FlipStereoLayout.Spin3DTransformer()
         binding.viewPager2.setPageTransformer(transformer)
     }
 
     inner class PagerAdapter : RecyclerView.Adapter<PagerAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerAdapter.ViewHolder {
-            val view = View.inflate(parent.context, R.layout.item_animation_3d_spin_vp, null)
+            val view = View.inflate(parent.context, R.layout.item_container_flip_stereo_vp, null)
             view.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             return ViewHolder(view)
         }
 
         override fun getItemCount(): Int = 4
 
-        @SuppressLint("SetTextI18n")
         override fun onBindViewHolder(holder: PagerAdapter.ViewHolder, position: Int) {
             when (position) {
                 0 -> {
@@ -58,8 +56,8 @@ class Spin3DActivity : ViewBindingActivity<ActivityAnimation3dSpinBinding>() {
         }
 
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val pic: ImageView = itemView.findViewById(R.id.pic_image)
-            val content: TextView = itemView.findViewById(R.id.content_text)
+            val pic: ImageView = itemView.findViewById(R.id.img_pic)
+            val content: TextView = itemView.findViewById(R.id.text_content)
         }
 
     }

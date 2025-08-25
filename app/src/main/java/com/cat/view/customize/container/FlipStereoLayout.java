@@ -1,4 +1,4 @@
-package com.cat.view.animation;
+package com.cat.view.customize.container;
 
 import android.content.Context;
 import android.graphics.Camera;
@@ -12,7 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class Spin3DLayout extends LinearLayout {
+/**
+ * 翻转立体布局
+ */
+public class FlipStereoLayout extends LinearLayout {
 
     private float rotateY = 0;
     private boolean isLeftRotate = true;
@@ -20,15 +23,15 @@ public class Spin3DLayout extends LinearLayout {
     private final Matrix matrix = new Matrix();
     private final Camera camera = new Camera();
 
-    public Spin3DLayout(@NonNull Context context) {
+    public FlipStereoLayout(@NonNull Context context) {
         super(context);
     }
 
-    public Spin3DLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public FlipStereoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public Spin3DLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public FlipStereoLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -69,7 +72,7 @@ public class Spin3DLayout extends LinearLayout {
 
         @Override
         public void transformPage(@NonNull View page, float position) {
-            Spin3DLayout constraintLayout = (Spin3DLayout) page;
+            FlipStereoLayout constraintLayout = (FlipStereoLayout) page;
             int tiltDegree = 34; // 倾斜度
             float rotateY = position * tiltDegree;
             constraintLayout.setRotateY(rotateY);

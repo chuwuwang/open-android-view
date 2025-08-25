@@ -1,6 +1,5 @@
 package com.cat.view.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         list.add(article)
         article = Article("Container Layout", R.drawable.ic_start_up_container)
         list.add(article)
-        article = Article("动画 View", R.drawable.achievement_2)
+        article = Article("Special Animation", R.drawable.achievement_2)
         list.add(article)
         article = Article("Custom View 1-1 Drawing Basics", R.drawable.ic_start_up_draw1)
         list.add(article)
@@ -60,19 +59,16 @@ class MainActivity : AppCompatActivity() {
             val item = list[position]
             holder.text.text = item.text
             holder.background.setImageResource(item.backgroundRes)
-            holder.view.setOnClickListener {
-                gotoFeature(item, position)
-            }
+            holder.view.setOnClickListener { gotoFeature(item) }
         }
 
-        private fun gotoFeature(item: Article, position: Int) {
+        private fun gotoFeature(item: Article) {
             if (item.text == "Text View") {
                 openActivity<TextActivity>()
             } else if (item.text == "Container Layout") {
                 openActivity<ContainerActivity>()
-            } else if (position == 1) {
-                val intent = Intent(baseContext, AnimationActivity::class.java)
-                startActivity(intent)
+            } else if (item.text == "Special Animation") {
+                openActivity<AnimationActivity>()
             } else if (item.text == "Custom View 1-1 Drawing Basics") {
                 openActivity<Draw1Activity>()
             }
