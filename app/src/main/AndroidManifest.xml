@@ -32,6 +32,7 @@
         <activity android:name=".ui.container.FlipStereoLayoutActivity" />
 
         <activity android:name=".ui.animation.AnimationActivity" />
+        <activity android:name=".ui.animation.RippleLikeViewActivity" />
         <activity android:name=".ui.animation.DragRestoredViewActivity" />
         <activity android:name=".ui.animation.StereoBallSportViewActivity" />
 

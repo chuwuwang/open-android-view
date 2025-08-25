@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/view_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.cat.view.customize.animation.RippleView
+                android:id="@+id/ripple_view"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:id="@+id/img_like_shining"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerHorizontal="true"
+                android:alpha="0"
+                android:contentDescription="@null"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:src="@drawable/ic_messages_like_selected_shining" />
+
+            <ImageView
+                android:id="@+id/img_like"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/img_like_shining"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-6dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_messages_like_unselected" />
+
+        </RelativeLayout>
+
+        <com.cat.view.customize.text.ScrollNumberView
+            android:id="@+id/scroll_number_view"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:scrollNumber_number="1000"
+            app:scrollNumber_textSize="8sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Ripple"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+</LinearLayout>

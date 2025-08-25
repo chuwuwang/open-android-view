@@ -11,6 +11,7 @@ class AnimationActivity : ViewBindingActivity<ActivityAnimationMainBinding>() {
     }
 
     private fun initView() {
+        binding.btnRippleLike.setOnClickListener { openActivity<RippleLikeViewActivity>() }
         binding.btnDragRestored.setOnClickListener { openActivity<DragRestoredViewActivity>() }
         binding.btnStereoBallSport.setOnClickListener { openActivity<StereoBallSportViewActivity>() }
     }

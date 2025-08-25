@@ -1,7 +1,7 @@
 # android-view
 
 ### Text
-- **ScrollNumberView**
+- **ScrollNumberView and RippleView**
 <img src="https://github.com/user-attachments/assets/5ed4fd39-b198-459d-8e02-d1996e589540" alt="Demo" width="300" height="600" />
 
 
