@@ -14,6 +14,7 @@ import com.cat.view.ui.animation.AnimationActivity
 import com.cat.view.ui.container.ContainerActivity
 import com.cat.view.ui.draw1.Draw1Activity
 import com.cat.view.ui.image.ImageActivity
+import com.cat.view.ui.progressbar.ProgressBarActivity
 import com.cat.view.ui.text.TextActivity
 import com.cat.view.utils.openActivity
 
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         var article = Article("Text View", R.drawable.ic_start_up_text)
         list.add(article)
         article = Article("Image View", R.drawable.ic_start_up_image)
+        list.add(article)
+        article = Article("ProgressBar", R.drawable.ic_start_up_progressbar)
         list.add(article)
         article = Article("Container Layout", R.drawable.ic_start_up_container)
         list.add(article)
@@ -76,6 +79,8 @@ class MainActivity : AppCompatActivity() {
                 openActivity<Draw1Activity>()
             } else if (item.text == "Image View") {
                 openActivity<ImageActivity>()
+            } else if (item.text == "ProgressBar") {
+                openActivity<ProgressBarActivity>()
             }
         }
 

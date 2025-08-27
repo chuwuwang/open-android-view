@@ -27,6 +27,9 @@
         <activity android:name=".ui.image.ImageActivity" />
         <activity android:name=".ui.image.GraphicsVerifyViewActivity" />
 
+        <activity android:name=".ui.progressbar.ProgressBarActivity" />
+        <activity android:name=".ui.progressbar.CometProgressBarActivity" />
+
         <activity android:name=".ui.container.ContainerActivity" />
         <activity android:name=".ui.container.MarqueeLayoutActivity" />
         <activity android:name=".ui.container.FlipStereoLayoutActivity" />

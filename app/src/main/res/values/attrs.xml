@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="ScrollNumberView">
+        <attr name="scrollNumber_number" format="integer" />
+        <attr name="scrollNumber_duration" format="integer" />
+        <attr name="scrollNumber_textColor" format="color|reference" />
+        <attr name="scrollNumber_textSize" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressBar">
+        <attr name="progressbar_count" format="integer" />
+        <attr name="progressbar_angleOffset" format="integer" />
+        <attr name="progressbar_toColor" format="color|reference" />
+        <attr name="progressbar_fromColor" format="color|reference" />
+        <attr name="progressbar_radius" format="dimension|reference" />
+        <attr name="progressbar_strokeWidth" format="dimension|reference" />
+    </declare-styleable>
+
     <declare-styleable name="MarqueeLayout">
         <attr name="marquee_borderWidth" format="dimension|reference" />
         <attr name="marquee_borderRadius" format="dimension|reference" />
@@ -8,13 +24,6 @@
         <attr name="marquee_endColor" format="color|reference" />
         <attr name="marquee_startColor" format="color|reference" />
         <attr name="marquee_middleColor" format="color|reference" />
-    </declare-styleable>
-
-    <declare-styleable name="ScrollNumberView">
-        <attr name="scrollNumber_number" format="integer" />
-        <attr name="scrollNumber_duration" format="integer" />
-        <attr name="scrollNumber_textColor" format="color|reference" />
-        <attr name="scrollNumber_textSize" format="dimension|reference" />
     </declare-styleable>
 
     <declare-styleable name="CometView">
