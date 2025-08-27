@@ -17,4 +17,8 @@
         <attr name="scrollNumber_textSize" format="dimension|reference" />
     </declare-styleable>
 
+    <declare-styleable name="CometView">
+        <attr name="comet_distance" format="dimension" />
+    </declare-styleable>
+
 </resources>

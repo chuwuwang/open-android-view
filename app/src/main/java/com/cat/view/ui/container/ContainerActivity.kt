@@ -2,7 +2,7 @@ package com.cat.view.ui.container
 
 import com.cat.view.databinding.ActivityContainerMainBinding
 import com.cat.view.ui.ViewBindingActivity
-import com.cat.view.util.openActivity
+import com.cat.view.utils.openActivity
 
 class ContainerActivity : ViewBindingActivity<ActivityContainerMainBinding>() {
 

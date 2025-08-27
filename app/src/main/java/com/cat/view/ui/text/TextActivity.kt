@@ -2,7 +2,7 @@ package com.cat.view.ui.text
 
 import com.cat.view.databinding.ActivityTextMainBinding
 import com.cat.view.ui.ViewBindingActivity
-import com.cat.view.util.openActivity
+import com.cat.view.utils.openActivity
 
 class TextActivity : ViewBindingActivity<ActivityTextMainBinding>() {
 

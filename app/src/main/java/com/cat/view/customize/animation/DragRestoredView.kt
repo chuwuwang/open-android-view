@@ -14,7 +14,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import androidx.core.graphics.minus
-import com.cat.view.util.dp
+import com.cat.view.utils.dp
 import kotlin.math.atan
 import kotlin.math.cos
 import kotlin.math.pow

@@ -2,7 +2,7 @@ package com.cat.view.ui.animation
 
 import com.cat.view.databinding.ActivityAnimationMainBinding
 import com.cat.view.ui.ViewBindingActivity
-import com.cat.view.util.openActivity
+import com.cat.view.utils.openActivity
 
 class AnimationActivity : ViewBindingActivity<ActivityAnimationMainBinding>() {
 
