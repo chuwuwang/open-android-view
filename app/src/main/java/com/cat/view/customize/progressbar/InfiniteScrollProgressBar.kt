@@ -25,6 +25,16 @@ class InfiniteScrollProgressBar @JvmOverloads constructor(
     defStyleAttr: Int = 0,
 ) : InfiniteAnimateView(context, attrs, defStyleAttr) {
 
+    private companion object {
+
+        private const val MAX_ANGLE = 360
+
+        private const val MIN_SWEEP_ANGLE = 10f
+
+        private const val SPIN_DURATION_MS = 2_000L
+
+    }
+
     private val progressRect = RectF()
     private val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val progressPaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -132,16 +142,6 @@ class InfiniteScrollProgressBar @JvmOverloads constructor(
 
     private fun convertToSweepAngle(progress: Float): Float {
         return MIN_SWEEP_ANGLE + progress * (MAX_ANGLE - MIN_SWEEP_ANGLE)
-    }
-
-    private companion object {
-
-        private const val MAX_ANGLE = 360
-
-        private const val MIN_SWEEP_ANGLE = 10f
-
-        private const val SPIN_DURATION_MS = 2_000L
-
     }
 
 }

@@ -16,6 +16,14 @@
         <attr name="gradient_textSize" format="dimension|reference" />
     </declare-styleable>
 
+    <declare-styleable name="InputBox">
+        <attr name="input_size" format="integer" />
+        <attr name="input_cursorVisible" format="boolean" />
+        <attr name="input_margin" format="dimension|reference" />
+        <attr name="input_background" format="color|reference" />
+        <attr name="input_cursorDrawable" format="color|reference" />
+    </declare-styleable>
+
     <!--///////////////////////////////  Progress Bar ///////////////////////////////////////////-->
     <declare-styleable name="ProgressBar">
         <attr name="progressbar_count" format="integer" />

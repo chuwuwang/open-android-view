@@ -19,12 +19,19 @@ class GradientTextView @JvmOverloads constructor(
     defStyleAttr: Int = 0,
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
+    companion object {
+
+        const val SLIDING_START = 0
+
+        const val SLIDING_END = 1
+
+    }
+
+    private val paint = Paint()
+
     private var text = ""
-    private var textSize = 0
     private var upColor = Color.BLACK   // 上层颜色
     private var belowColor = Color.RED  // 底层颜色
-    private val paint = Paint().apply { isAntiAlias = true }
-
     private var slidingMode = SLIDING_START
 
     private val typedArray = context.obtainStyledAttributes(attrs, R.styleable.GradientTextView, defStyleAttr, 0)
@@ -34,14 +41,14 @@ class GradientTextView @JvmOverloads constructor(
             text = typedArray.getString(R.styleable.GradientTextView_gradient_text) ?: ""
             upColor = typedArray.getColor(R.styleable.GradientTextView_gradient_upColor, Color.BLACK)
             belowColor = typedArray.getColor(R.styleable.GradientTextView_gradient_belowColor, Color.RED)
-            textSize = typedArray.getDimension(R.styleable.GradientTextView_gradient_textSize, 28f).toInt()
-            paint.textSize = textSize.toFloat()
+            paint.textSize = typedArray.getDimension(R.styleable.GradientTextView_gradient_textSize, 48f)
         } finally {
             typedArray.recycle()
         }
         isEnabled = false
         isClickable = true
         isFocusable = false
+        paint.isAntiAlias = true
     }
 
     fun setSlidingMode(mode: Int) {
@@ -141,14 +148,6 @@ class GradientTextView @JvmOverloads constructor(
             }
         }
         return super.onTouchEvent(event)
-    }
-
-    companion object {
-
-        const val SLIDING_START = 0
-
-        const val SLIDING_END = 1
-
     }
 
 }

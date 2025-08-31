@@ -202,7 +202,7 @@ public class StereoBallSportView extends View {
         postInvalidateDelayed(32);
     }
 
-    Comparator comparator = new Comparator<Point>() {
+    private final Comparator comparator = new Comparator<Point>() {
 
         @Override
         public int compare(Point left, Point right) {
