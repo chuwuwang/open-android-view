@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         list.add(article)
         article = Article("Special Animation", R.drawable.ic_start_up_animation)
         list.add(article)
+        article = Article("Open Source Libraries", R.drawable.ic_wallpaper_1)
+        list.add(article)
         article = Article("Custom View 1-1 Drawing Basics", R.drawable.ic_start_up_draw1)
         list.add(article)
     }
@@ -81,6 +83,8 @@ class MainActivity : AppCompatActivity() {
                 openActivity<ImageActivity>()
             } else if (item.text == "ProgressBar") {
                 openActivity<ProgressBarActivity>()
+            } else if (item.text == "Open Source Libraries") {
+
             }
         }
 

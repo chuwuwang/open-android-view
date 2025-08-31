@@ -40,26 +40,26 @@
 
     <!--/////////////////////////// Layout Container  ///////////////////////////////////////////-->
     <declare-styleable name="MarqueeLayout">
-        <attr name="marquee_borderWidth" format="dimension|reference" />
-        <attr name="marquee_borderRadius" format="dimension|reference" />
         <attr name="marquee_duration" format="integer" />
         <attr name="marquee_endColor" format="color|reference" />
         <attr name="marquee_startColor" format="color|reference" />
         <attr name="marquee_middleColor" format="color|reference" />
+        <attr name="marquee_borderWidth" format="dimension|reference" />
+        <attr name="marquee_borderRadius" format="dimension|reference" />
     </declare-styleable>
 
     <!--///////////////////////////////  Animation //////////////////////////////////////////////-->
     <declare-styleable name="CometView">
-        <attr name="comet_distance" format="dimension" />
+        <attr name="comet_distance" format="dimension|reference" />
     </declare-styleable>
 
     <declare-styleable name="Indicator">
-        <attr name="indicator_radius" format="dimension" />
-        <attr name="indicator_padding" format="dimension" />
-        <attr name="indicator_color" format="color|reference" />
         <attr name="indicator_stickEnable" format="boolean" />
-        <attr name="indicator_selectRadius" format="dimension" />
+        <attr name="indicator_color" format="color|reference" />
+        <attr name="indicator_radius" format="dimension|reference" />
+        <attr name="indicator_padding" format="dimension|reference" />
         <attr name="indicator_selectColor" format="color|reference" />
+        <attr name="indicator_selectRadius" format="dimension|reference" />
     </declare-styleable>
 
 </resources>
