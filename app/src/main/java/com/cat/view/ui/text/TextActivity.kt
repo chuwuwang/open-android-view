@@ -12,6 +12,7 @@ class TextActivity : ViewBindingActivity<ActivityTextMainBinding>() {
 
     private fun initView() {
         binding.btnScrollNumber.setOnClickListener { openActivity<ScrollNumberViewActivity>() }
+        binding.btnGradientScroll.setOnClickListener { openActivity<GradientTextViewActivity>() }
     }
 
 }
