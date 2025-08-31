@@ -23,7 +23,7 @@ class RippleLikeViewActivity : ViewBindingActivity<ActivityAnimationRippleLikeBi
         val hy1 = PropertyValuesHolder.ofFloat("scaleY", 0.8f)
         val oa1 = ObjectAnimator.ofPropertyValuesHolder(binding.imgLike, hx1, hy1)
         oa1.interpolator = DecelerateInterpolator()
-        oa1.setDuration(300)
+        oa1.duration = 300
         val likeListener = object : AnimatorListenerAdapter() {
 
             override fun onAnimationStart(animation: Animator) {
@@ -40,14 +40,14 @@ class RippleLikeViewActivity : ViewBindingActivity<ActivityAnimationRippleLikeBi
         val hy2 = PropertyValuesHolder.ofFloat("scaleY", 1.0f)
         val oa2 = ObjectAnimator.ofPropertyValuesHolder(binding.imgLike, hx2, hy2)
         oa2.interpolator = OvershootInterpolator()
-        oa2.setDuration(300)
+        oa2.duration = 300
         oa2.addListener(likeListener)
 
         // shining 图标的 scale 变化 from (0.0) to (1.0)
         val shiningListener = object : AnimatorListenerAdapter() {
 
             override fun onAnimationStart(animation: Animator) {
-                binding.imgLikeShining.setAlpha(1.0f)
+                binding.imgLikeShining.alpha = 1.0f
             }
 
         }
@@ -55,7 +55,7 @@ class RippleLikeViewActivity : ViewBindingActivity<ActivityAnimationRippleLikeBi
         val hy3 = PropertyValuesHolder.ofFloat("scaleY", 1.0f)
         val oa3 = ObjectAnimator.ofPropertyValuesHolder(binding.imgLikeShining, hx3, hy3)
         oa3.addListener(shiningListener)
-        oa2.setDuration(300)
+        oa2.duration = 300
 
         val set1 = AnimatorSet()
         set1.play(oa2).with(oa3).after(oa1)
@@ -97,7 +97,7 @@ class RippleLikeViewActivity : ViewBindingActivity<ActivityAnimationRippleLikeBi
                 .withEndAction {
                     binding.imgLikeShining.scaleX = 0f
                     binding.imgLikeShining.scaleY = 0f
-                    binding.imgLikeShining.setAlpha(0.0f)
+                    binding.imgLikeShining.alpha = 0.0f
                 }.setDuration(300).start()
         }
 

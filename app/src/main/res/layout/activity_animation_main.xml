@@ -41,4 +41,16 @@
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_circle_stick_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Circle Stick Indicator (圆形粘性指示器)"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

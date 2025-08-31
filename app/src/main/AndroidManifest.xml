@@ -39,6 +39,7 @@
         <activity android:name=".ui.animation.RippleLikeViewActivity" />
         <activity android:name=".ui.animation.DragRestoredViewActivity" />
         <activity android:name=".ui.animation.StereoBallSportViewActivity" />
+        <activity android:name=".ui.animation.CircleStickIndicatorActivity" />
 
     </application>
 
