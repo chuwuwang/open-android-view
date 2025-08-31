@@ -29,6 +29,7 @@
 
         <activity android:name=".ui.progressbar.ProgressBarActivity" />
         <activity android:name=".ui.progressbar.CometProgressBarActivity" />
+        <activity android:name=".ui.progressbar.InfiniteScrollProgressBarActivity" />
 
         <activity android:name=".ui.container.ContainerActivity" />
         <activity android:name=".ui.container.MarqueeLayoutActivity" />

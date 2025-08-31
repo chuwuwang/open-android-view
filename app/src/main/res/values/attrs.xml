@@ -15,6 +15,10 @@
         <attr name="progressbar_fromColor" format="color|reference" />
         <attr name="progressbar_radius" format="dimension|reference" />
         <attr name="progressbar_strokeWidth" format="dimension|reference" />
+
+        <attr name="progressbar_color" format="color|reference" />
+        <attr name="progressbar_strokeColor" format="color|reference" />
+        <attr name="progressbar_backgroundColor" format="color|reference" />
     </declare-styleable>
 
     <declare-styleable name="MarqueeLayout">

@@ -12,6 +12,7 @@ class ProgressBarActivity : ViewBindingActivity<ActivityProgressbarMainBinding>(
 
     private fun initView() {
         binding.btnCometProgressbar.setOnClickListener { openActivity<CometProgressBarActivity>() }
+        binding.btnInfiniteScrollProgressbar.setOnClickListener { openActivity<InfiniteScrollProgressBarActivity>() }
     }
 
 }
