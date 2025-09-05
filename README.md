@@ -1,4 +1,4 @@
-## 🌱 Collect and organize various custom effects View.
+## 🌱 Collect and organize various custom effects View
 
 ### Text
 - **ScrollNumberView and RippleView** reference ScrollNumberViewActivity.kt
