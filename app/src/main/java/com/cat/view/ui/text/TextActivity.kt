@@ -14,6 +14,7 @@ class TextActivity : ViewBindingActivity<ActivityTextMainBinding>() {
         binding.btnInputBox.setOnClickListener { openActivity<InputBoxActivity>() }
         binding.btnScrollNumber.setOnClickListener { openActivity<ScrollNumberViewActivity>() }
         binding.btnGradientScroll.setOnClickListener { openActivity<GradientTextViewActivity>() }
+        binding.btnInputParticleExplosion.setOnClickListener { openActivity<InputParticleExplosionViewActivity>() }
     }
 
 }
