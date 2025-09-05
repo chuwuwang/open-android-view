@@ -20,7 +20,7 @@
             app:progressbar_strokeWidth="1dp"
             app:progressbar_toColor="@android:color/transparent" />
 
-        <com.cat.view.customize.animation.particle.CometView
+        <com.cat.view.customize.particle.Comet
             android:id="@+id/comet_view"
             android:layout_width="240dp"
             android:layout_height="240dp"

@@ -1,4 +1,4 @@
-package com.cat.view.customize.animation.particle;
+package com.cat.view.customize.particle;
 
 /**
  * 每一粒小元素 {@link Element}
@@ -10,6 +10,8 @@ package com.cat.view.customize.animation.particle;
 
 public class Element {
 
+    public int color;
+
     // 360
     public double direction;
 
@@ -20,8 +22,14 @@ public class Element {
     public float y = 0;
 
     public Element(double direction, float speed) {
-        this.direction = direction;
         this.speed = speed;
+        this.direction = direction;
+    }
+
+    public Element(int color, double direction, float speed) {
+        this.color = color;
+        this.speed = speed;
+        this.direction = direction;
     }
 
 }

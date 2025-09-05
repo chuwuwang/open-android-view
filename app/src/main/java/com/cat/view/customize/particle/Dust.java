@@ -1,4 +1,4 @@
-package com.cat.view.customize.animation.particle;
+package com.cat.view.customize.particle;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * 尘埃, 包含了在某一处喷射的所有 {@link Element} 的集合
  */
-public class DustView {
+public class Dust {
 
     private static final int DEFAULT_ELEMENT_COUNT = 12;
     private static final float DEFAULT_ELEMENT_SIZE = 6;
@@ -38,7 +38,7 @@ public class DustView {
 
     private final ArrayList<Element> elements = new ArrayList<>();
 
-    public DustView(float angle, float cx, float cy, float radius) {
+    public Dust(float angle, float cx, float cy, float radius) {
         this.mAngle = angle;
         mCount = DEFAULT_ELEMENT_COUNT;
         mElementSize = DEFAULT_ELEMENT_SIZE;

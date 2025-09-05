@@ -1,4 +1,4 @@
-package com.cat.view.customize.animation.particle;
+package com.cat.view.customize.particle;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -19,9 +19,9 @@ import java.util.LinkedList;
 import java.util.Locale;
 
 /**
- * 彗星, 里包含很多 {@link DustView} , 每个 Dust 代表在某处喷射的点集 {@link Element}
+ * 彗星, 里包含很多 {@link Dust} , 每个 Dust 代表在某处喷射的点集 {@link Element}
  */
-public class CometView extends View {
+public class Comet extends View {
 
     private static final String TAG = "CometView";
 
@@ -41,14 +41,14 @@ public class CometView extends View {
 
     private boolean mIsRunning = false;
 
-    private final LinkedList<DustView> mDusts = new LinkedList<>();
+    private final LinkedList<Dust> mDusts = new LinkedList<>();
 
-    public CometView(Context context) {
+    public Comet(Context context) {
         super(context);
         init(null);
     }
 
-    public CometView(Context context, @Nullable AttributeSet attrs) {
+    public Comet(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(attrs);
     }
@@ -96,7 +96,7 @@ public class CometView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         for (int i = 0; i < mDusts.size(); i++) {
-            DustView dust = mDusts.get(i);
+            Dust dust = mDusts.get(i);
             dust.draw(canvas);
         }
         if (mIsRunning && mDusts.size() < DEFAULT_DUST_SIZE) addDust();
@@ -122,7 +122,7 @@ public class CometView extends View {
     }
 
     public void addDust() {
-        DustView dust = new DustView(mAnimatedValue, mCx, mCY, mRadius);
+        Dust dust = new Dust(mAnimatedValue, mCx, mCY, mRadius);
         dust.addAnimatorListener(() -> mDusts.remove(dust));
         mDusts.add(dust);
         dust.fire();
